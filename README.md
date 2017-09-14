@@ -1,7 +1,7 @@
 # Goyangin Theme Hexo
-Live Demo : [Goyangin Theme](http://goyangin.0x3g.com/).
-Demo Post : [All Tags](http://goyangin.0x3g.com/2017/07/tag-all-in-post/).
-This Theme no need category post, just use Tag in post for category.
+Live Demo : [Goyangin Theme](http://goyangin.0x3g.com/). <br />
+Demo Post : [All Tags](http://goyangin.0x3g.com/2017/07/tag-all-in-post/). <br />
+This Theme no need category post, just use Tag in post for category. <br />
 
 ![demo](http://g3xdev.com/images/goyangin.png)
 
