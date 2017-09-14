@@ -1,0 +1,21 @@
+<section class="hero box " style="margin-top:15px;">
+ <div class="hero-head">
+      <%- partial('_partial/menu') %>
+  </div>
+  <div class="hero-body has-text-centered is-paddingless">
+  
+        <img class="img-circle" src="<%= url_for(theme.logo) %>" width="128" height="128">
+      
+        <h1 class="title"> <%= config.title %> </h1>
+      <h2 class="subtitle"> <% if (config.subtitle){ %><%= config.subtitle %><% } %> </h2>
+  
+    	<% Object.keys(theme.social).forEach(function(key) { %>
+          <% if (key == 'email'){ %>
+              <a class="button is-info is-outlined" href="mailto:<%= theme.social[key] %>?" title="<%=key.trim()%>"> <span class="icon"><i class="fa fa-envelope"></i> </span></a>
+          <% } else {%>
+              <a class="button is-info is-outlined" href="<%= theme.social[key] %>"><span class="icon"> <i class="fa fa-<%= key.toLowerCase() %>"></i> </span></a>
+          <% }%>
+       <% }) %>
+
+  </div>
+</section>

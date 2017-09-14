@@ -1,0 +1,88 @@
+<div class="card">
+          <!-- Title -->
+    <div class="card-content">
+        <div class="level">
+            <div class="level-left">
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image is-48x48">
+                        <img src="<%- gravatar(theme.gravatar, {s: 48, d: 'mm'}) %>" alt="Image">
+                          
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <h1 class="title is-4"><a href="<%- config.root %><%- item.path %>" class="has-text-info"> <%- item.title || item.link%></a></h1>
+                        <p class="subtitle is-6">
+                            <span class="icon is-small"><i class="fa fa-calendar"></i></span> <%= item.date.format(config.date_format) %>
+                            &nbsp; &nbsp; &nbsp; &nbsp;
+                            <span class="icon is-small"><i class="fa fa-user"></i></span> <%- item.author ? item.author : config.author  %>
+
+                        </p>
+                    </div>
+                </div>   
+            </div>
+            <div class="level-right">
+                <%- partial('article-tags', {item: item}) %>
+            </div>
+        </div> 
+
+        <div class="content"> 
+            <hr />
+            <!-- Content -->
+            <%- item.content %>
+            <hr />
+        </div>  
+
+      <div class="columns is-mobile">
+          <div class="column" style="white-space: nowrap;">  
+            <p class="title is-4"><span class="icon is-medium"><i class="fa fa-file-text-o"></i></span>Recents Post </p>
+          </div>
+         <div class="column has-text-right" id="share">
+            
+           
+            <div class="box" id="shared" style="display:none; position:absolute; z-index:999; right:100px;">
+                    <div class="field has-addons">
+                <div class="control is-expanded  is-hidden-touch">
+                    <input class="input is-info" type="text" value="<%- item.permalink %>" id="cur">
+                </div>
+                <div class="control">&nbsp;
+                    <a class="button is-info is-outlined" id="fb"><span class="icon"><i class="fa fa-facebook"></i></span></a>
+                    <a class="button is-info is-outlined" id="tw"><span class="icon"><i class="fa fa-twitter"></i></span></a>
+                    <a class="button is-info is-outlined" id="gp"><span class="icon"><i class="fa fa-google-plus"></i></span></a>
+                    <a class="button is-info is-outlined" id="pt"><span class="icon"><i class="fa fa-pinterest"></i></span></a>
+                </div>
+                </div>
+
+            </div>
+            <p class="title is-4" ><span class="icon is-medium"><i class="fa fa-share"></i></span>Share </p>
+        </div>
+      </div>  
+     
+      
+      <% var i = 0; %>
+        <% site.posts.sort('date', -1).limit(4).each(function(post){ i++; %>
+            <% if(i % 2 == 1) {%><div class="columns"><% } %>
+            <div class="column">   
+                <article class="media">
+                <figure class="media-left">
+                    <p class="image is-64x64">
+                        <span class="fa-stack fa-2x"><i class="fa fa-calendar-o fa-stack-2x"></i>
+                            <strong class="fa-stack-1x" style="margin-top: .3em; "><%= post.date.format("DD") %></strong>
+                        </span>
+                    </p>              
+               </figure>
+                <div class="media-content">
+                    <div class="content">
+                        <p> <strong> <a href="<%- url_for(post.path) %>"><span class="has-text-info"> <%= post.title %></span></a></strong> <small><%= post.date.format("dddd, hA")%> </small><br>
+                            <%- truncate(strip_html(post.content), {length: 100} ) %>
+                        </p>
+                    </div>
+                </div>
+                </article>
+            </div>
+            <% if( i % 2 == 0) {%> </div> <% } %>
+        <% }) %>
+ 
+        <%- partial('comment') %>
+    </div>
+</div>

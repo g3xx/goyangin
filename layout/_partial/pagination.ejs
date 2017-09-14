@@ -1,0 +1,11 @@
+
+<% if(page.prev || page.next) { %>
+  <nav class="pagination is-centered">
+        <a class="button is-info pagination-previous" href="<%- config.root %><%- page.prev_link %>" <%- page.prev ? "" : "disabled" %> >
+           <span class="icon"><i class="fa fa-chevron-left"></i></span><span>Previous</span> 
+        </a>
+        <a class="button is-info pagination-next" href="<%- config.root %><%- page.next_link %>" <%- page.next ? "" : "disabled" %> >
+            <span>Next Page</span> <span class="icon"><i class="fa fa-chevron-right"></i></span>
+        </a>
+  </nav>
+<% } %>

@@ -1,0 +1,24 @@
+<html>
+<!-- Head tag -->
+<%- partial('_partial/head') %>
+<body>
+   <!-- Blog Header: title and subtitle and menu-->
+    <div class="columns is-centered">
+            <div class="column is-three-quarters">
+                <%- partial('_partial/header') %>
+   
+                 <!-- Menu move to header partial--> 
+
+                  <!-- body -->
+                      <%- body %>
+         
+             <!-- Footer -->
+                <%- partial('_partial/footer') %>
+            </div>
+    </div>
+   
+    <!-- After footer scripts -->
+    <%- partial('_partial/after-footer') %>
+    
+</body>
+</html>

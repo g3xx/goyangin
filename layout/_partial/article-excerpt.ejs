@@ -1,0 +1,44 @@
+<div class="column">
+     <div class="card">
+    <!-- Title -->
+    <header class="card-header">
+      <p class="card-header-title"> 
+         <a href="<%- config.root %><%- item.path %>" > <span class="has-text-info"> <%- item.title %>  </span> </a>
+      </p>
+       <span class="card-header-icon">
+           <%= item.date.format(config.date_format) %>
+        </span> 
+     </header>
+
+    <div class="card-image">
+        <figure class="image is-2by1">
+          
+        <% if (item.content.match(/!\[.*?\]\((.*?)\)/)){ %>
+          <img src="<%- strip_html(item.content.match(/!\[.*?\]\((.*?)\)/)[1]) %>" alt="Image">
+        <%  }else{ %>
+          <img src="<%= theme.thumbimg %><%- Math.ceil(Math.random() * 10) %>" alt="Image">
+        <% } %>
+        
+        </figure>
+    </div>
+
+    <!-- Content -->
+    <div class="card-content">
+
+        <%- truncate(strip_html(item.content), {length: 160, omission: '...'}) || truncate(z, {length: 160, omission: '...'}) %>
+    </div>
+
+    <!-- ffooter -->
+    <div class="ifoot">  
+    
+    <% if (item.tags && item.tags.length){ %>
+        <% item.tags.forEach(function (tag) { %>
+            <a href="<%= url_for(tag.path)  %>"> <span class="tag is-info"><span class="icon is-small"><i class="fa fa-tag"></i>&nbsp;</span><%= tag.name %>  </span></a>
+        <% }) %>
+    <% } %>
+        <div class= "is-pulled-right"><a href="<%- config.root %><%- item.path %>" class="button is-info is-small is-outlined"><%= theme.excerpt_link %></a> </div>
+    </div>
+
+
+    </div>
+</div>

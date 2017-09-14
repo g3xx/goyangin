@@ -1,0 +1,14 @@
+
+<div class="card">
+    <div class="card-content">
+        <% var i = 0; %>
+        <% page.posts.each(function(item){ i++ %>
+            <% if(i % 2 == 1) {%><div class="columns"><% } %>
+            <%- partial('_partial/article-archive', {item: item}) %>
+            <% if( i % 2 == 0) {%> </div> <% } %>
+        <% }); %>
+
+    </div>
+</div>
+
+<%- partial('_partial/pagination') %>

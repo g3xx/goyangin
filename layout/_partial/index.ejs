@@ -1,0 +1,18 @@
+<% var last, postCount = 0; %>
+<% page.posts.each(function(item){ %>
+  
+    <% postCount++; %>
+    <% if(postCount % theme.grid == 1) {%>
+         <div class="columns"> <!-- 2 -->
+    <% } %>
+            
+            <%- partial('article-excerpt', {item: item}) %> 
+          
+    <% if( postCount == page.posts.length || postCount % theme.grid == 0) {%>
+        </div> <!-- This will work as expected -->
+    <% } %>
+<% }); %>
+
+ <%- partial('pagination', {type: 'page'}) %>
+
+ 
