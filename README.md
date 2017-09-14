@@ -3,7 +3,7 @@ Live Demo : [Goyangin Theme](http://goyangin.0x3g.com/). <br />
 Demo Post : [All Tags](http://goyangin.0x3g.com/2017/07/tag-all-in-post/). <br />
 This Theme no need category post, just use Tag in post for category. <br />
 
-![demo](http://g3xdev.com/images/goyangin.png)
+![demo](demo.png)
 
 # Feature
  - Responsive 
@@ -56,8 +56,8 @@ social:
 highlight_theme: night eighties
 ```
 # Getting Started with Post
-1. Create Post.`$ hexo new Post Hello-word`
-2. Edit File in `sorce\_post\hello-word.md`
+1. Create Post.`$ hexo new Post "inyong lop ded indonesia"`
+2. Edit File in `sorce\_post\inyong lop ded indonesia`
 3. **TAGS is CATEGORY** (No Need add Category)
 ```
 ---
@@ -66,6 +66,7 @@ date: 2017-07-18 15:43:12
 tags: 
     - markdown 
     - Github
+	- indonesia
 ---
 you post in here ..
 ```
@@ -74,6 +75,6 @@ you post in here ..
 - Later i will Feature share with Icon in Post and
 - add meta tag (facebook, gplus, twitter, etc)
 # Copyright
-(c) 2017 by g3xx (partai YCL), 100% **MADE IN INDONESIA**
+(c) 2017 by g3xx (partai YCL), 100% :heart: **INDONESIA**
 # License
 **MIT**
