@@ -15,9 +15,17 @@
             &nbsp;<%= key %> </a>
     <% }) %>
 
+        <% if (site.categories.length){ %>
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-item is-hovered is-active"><span class="icon" ><i class="fa fa-list"></i></span> &nbsp;Categories </a>
+            <div class="navbar-dropdown ">
+                <%- list_categories({ separator: '', show_count:false, style: 'a', class: 'navbar-item ' }) %>
+            </div>
+        </div>
+        <% } %>
         <% if (site.tags.length){ %>
         <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-item is-hovered is-active"><span class="icon" ><i class="fa fa-tags"></i></span> &nbsp;Categories </a>
+            <a class="navbar-item is-hovered is-active"><span class="icon" ><i class="fa fa-tags"></i></span> &nbsp;Tags </a>
             <div class="navbar-dropdown ">
                 <%- list_tags({ separator: '', show_count:false, style: 'a', class: 'navbar-item ' }) %>
             </div>
