@@ -16,7 +16,7 @@
         <% if (item.content.match(/!\[.*?\]\((.*?)\)/)){ %>
           <img src="<%- strip_html(item.content.match(/!\[.*?\]\((.*?)\)/)[1]) %>" alt="Image">
         <%  }else{ %>
-          <img src="<%= theme.thumbimg %><%- Math.ceil(Math.random() * 10) %>" alt="Image">
+          <img src="<%= theme.thumbimg %>" alt="Image">
         <% } %>
         
         </figure>
