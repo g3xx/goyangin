@@ -13,8 +13,7 @@
     <div class="card-image">
         <figure class="image is-2by1">
           
-        <% if (item.content.match(/!\[.*?\]\((.*?)\)/)){ %>
-          <img src="<%- strip_html(item.content.match(/!\[.*?\]\((.*?)\)/)[1]) %>" alt="Image">
+        <% if (item.thumbs){ %>
         <%  }else{ %>
           <img src="<%= theme.thumbimg %><%- Math.ceil(Math.random() * 10) %>" alt="Image">
         <% } %>
