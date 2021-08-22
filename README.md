@@ -63,6 +63,7 @@ highlight_theme: night eighties
 ---
 title: Hello World
 date: 2017-07-18 15:43:12
+thumbs: image/path/want/thunb
 tags: 
     - markdown 
     - Github
