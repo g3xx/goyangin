@@ -14,8 +14,9 @@
         <figure class="image is-2by1">
           
         <% if (item.thumbs){ %>
+            <img src="<%- item.thumbs %>" alt="Image">
         <%  }else{ %>
-          <img src="<%= theme.thumbimg %><%- Math.ceil(Math.random() * 10) %>" alt="Image">
+            <img src="<%= theme.thumbimg %><%- Math.ceil(Math.random() * 10) %>" alt="Image">
         <% } %>
         
         </figure>
